@@ -79,7 +79,7 @@ function App() {
             </motion.h1>
             <p className="subtitle">You've made me the happiest person!</p>
             <motion.img
-              src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2Q1Y2E4MmIyZGVlNzEwY2Q1NzAzYzAzZDJjZTRjMTc4YjI5ZDAyMyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/26BRv0ThflsKCqMbu/giphy.gif"
+              src="https://i.giphy.com/media/26BRv0ThflsKCqMbu/giphy.webp"
               alt="Happy Bear"
               className="success-gif"
               initial={{ opacity: 0, y: 20 }}
@@ -98,7 +98,7 @@ function App() {
             </motion.h1>
 
             <motion.img
-              src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExODk2MGFlY2EzNzY0ZGIzNTc0ODQ5YzFjZDI4Y2I5ZDJjZTRjMTc4YjI5ZDAyMyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/MDJ9IbxxvDUQM/giphy.gif"
+              src="https://i.giphy.com/media/MDJ9IbxxvDUQM/giphy.webp"
               alt="Cute Bear"
               className="cute-gif"
               style={{ maxWidth: '200px', marginBottom: '20px', borderRadius: '10px' }}
