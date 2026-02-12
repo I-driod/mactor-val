@@ -3,29 +3,29 @@ import { motion } from 'framer-motion';
 
 const destinations = [
     {
+        id: 'amsterdam',
+        name: 'Amsterdam',
+        image: 'https://images.unsplash.com/photo-1534351590666-13e3e96b5017?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    },
+    {
         id: 'paris',
         name: 'Paris',
-        image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80', // Paris
+        image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80',
     },
     {
-        id: 'santorini',
-        name: 'Santorini',
-        image: 'https://images.unsplash.com/photo-1613395877344-13d4c2ce5f5e?auto=format&fit=crop&w=800&q=80', // Santorini
+        id: 'capetown',
+        name: 'Cape Town',
+        image: 'https://images.unsplash.com/photo-1580060839134-75a5edca2e99?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
     {
-        id: 'maldives',
-        name: 'Maldives',
-        image: 'https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=800&q=80', // Maldives
-    },
-    {
-        id: 'tokyo',
-        name: 'Tokyo',
-        image: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80', // Tokyo
+        id: 'abuja',
+        name: 'Abuja',
+        image: 'https://images.unsplash.com/photo-1707406534088-09c4b6958cfa?q=80&w=1633&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
     {
         id: 'anywhere',
         name: 'Anywhere with you',
-        image: 'https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?auto=format&fit=crop&w=800&q=80', // Abstract Nature/Couple
+        image: 'https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?auto=format&fit=crop&w=800&q=80',
     },
 ];
 
@@ -37,10 +37,10 @@ const Destinations = () => {
             {/* Background Overlay transition based on selection */}
             {selected && (
                 <motion.div
-                    className="absolute inset-0 bg-cover bg-center z-0 opacity-20 blur-sm transition-opacity duration-1000"
+                    className="absolute inset-0 bg-cover bg-center z-0 opacity-50 transition-opacity duration-1000"
                     style={{ backgroundImage: `url(${destinations.find(d => d.id === selected)?.image})` }}
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: 0.2 }}
+                    animate={{ opacity: 0.1 }}
                 />
             )}
 
@@ -90,6 +90,34 @@ const Destinations = () => {
                     </motion.div>
                 ))}
             </div>
+
+            {/* Playlist Section */}
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="mt-20 w-full max-w-4xl flex flex-col items-center gap-8 relative z-10"
+            >
+                <div className="text-center space-y-4">
+                    <h3 className="text-3xl md:text-5xl font-light text-emerald-200" style={{ fontFamily: "serif" }}>
+                        Happy Valentine's Day Pilot
+                    </h3>
+                    <p className="text-emerald-400/80 font-light italic">
+                        Our soundtrack...
+                    </p>
+                </div>
+
+                <div className="w-full rounded-2xl overflow-hidden shadow-2xl shadow-emerald-900/50 border border-emerald-500/20 bg-emerald-950/30 backdrop-blur-sm">
+                    <iframe
+                        allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+                        frameBorder="0"
+                        height="450"
+                        style={{ width: '100%', maxWidth: '100%', overflow: 'hidden', background: 'transparent' }}
+                        sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+                        src="https://embed.music.apple.com/nl/playlist/happy-valentines-day-pilot/pl.u-ZmblVLWTVl620l2?l=en-GB"
+                    />
+                </div>
+            </motion.div>
         </section>
     );
 };

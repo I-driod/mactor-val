@@ -48,7 +48,7 @@ const ClosingSection = () => {
                     transition={{ duration: 1, delay: 1.5 }}
                     className="text-emerald-400/60 text-lg"
                 >
-                    – With love
+                    – With love, <span className="font-serif italic text-emerald-200">Mactor</span>
                 </motion.div>
             </div>
         </section>
