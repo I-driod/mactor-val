@@ -1,140 +1,70 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
 
-:root {
-  --color-primary-red: #FF4D4D;
-  --color-primary-pink: #FFB6C1;
-  --color-accent-green: #4CAF50;
-  --font-heading: 'Pacifico', cursive;
-  --font-body: 'Poppins', sans-serif;
+@theme {
+  --color-emerald-900: #064E3B;
+  /* Deep Emerald */
+  --color-emerald-800: #065F46;
+  /* Forest Green */
+  --color-sage: #9CA3AF;
+  --color-mint: #A7F3D0;
+
+  --font-sans: 'Inter', sans-serif;
+
+  --animate-fade-in: fadeIn 1s ease-out forwards;
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Custom styles outside of @theme if needed, but v4 encourages using @theme */
+/* Custom styles outside of @theme if needed, but v4 encourages using @theme */
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font-body);
-  background-color: #FFF0F5;
-  /* Lavender Blush */
-  color: #333;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-emerald-900);
+  color: #E5E7EB;
+  /* Gray-200 equivalent */
+  font-family: var(--font-sans);
   overflow-x: hidden;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-#root {
-  width: 100%;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 2rem;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-
-h1 {
-  font-family: var(--font-heading);
-  font-size: 3.5rem;
-  color: var(--color-primary-red);
-  margin-bottom: 2rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.button-group {
-  display: flex;
-  gap: 2rem;
-  margin-top: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-button {
-  padding: 1rem 2.5rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.btn-yes {
-  background: linear-gradient(135deg, var(--color-accent-green), #66BB6A);
+/* Custom Checkbox/Selection styles */
+::selection {
+  background-color: #10B981;
+  /* Emerald 500 */
   color: white;
 }
 
-.btn-yes:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 12px rgba(76, 175, 80, 0.3);
+/* Custom scrollbar for Webkit */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.btn-no {
-  background: var(--color-primary-red);
-  color: white;
-  position: absolute;
-  /* Allows movement */
+::-webkit-scrollbar-track {
+  background: #022c22;
 }
 
-.floating-hearts {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
+::-webkit-scrollbar-thumb {
+  background: #059669;
+  border-radius: 4px;
 }
 
-.heart {
-  position: absolute;
-  font-size: 1.5rem;
-  color: var(--color-primary-pink);
-  opacity: 0.7;
-  animation: float 10s infinite linear;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(110vh) translateX(0) rotate(0deg);
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateY(-10vh) translateX(100px) rotate(360deg);
-    opacity: 0;
-  }
-}
-
-/* Mobile responsivenss */
-@media (max-width: 600px) {
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  .button-group {
-    flex-direction: column;
-    gap: 1rem;
-    height: 200px;
-    /* Space for moving button */
-    position: relative;
-    width: 100%;
-    align-items: center;
-  }
-
-  .btn-no {
-    position: absolute;
-  }
+::-webkit-scrollbar-thumb:hover {
+  background: #10b981;
 }
